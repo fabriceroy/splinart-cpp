@@ -20,7 +20,7 @@ doc = { cmd = "cd doc; make html" }
 [dependencies]
 cxx-compiler = "1.6.0.*"
 cmake = "3.27.9.*"
-#opencv = "4.8.1.*"
+opencv = "4.8.1.*"
 cli11 = "2.3.2.*"
 xtensor = "0.24.7.*"
 ninja = "1.11.1.*"

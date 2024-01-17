@@ -29,7 +29,7 @@ jobs:
           cmake -S . -B .build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug -DBUILD_EXAMPLES=ON
           cppcheck --enable=all -q --project=.build/compile_commands.json --suppressions-list=.cppcheck 2> cppcheck_err.txt
 
-        shell: pixi run bach {0}
+        shell: pixi run bash {0}
 
       - name: check for errors
         run: |

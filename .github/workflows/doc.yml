@@ -1,0 +1,22 @@
+name: "Build doc"
+
+on: pull_request
+
+jobs:
+  documentation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: prefix-dev/setup-pixi@v0.4.1
+        with:
+          pixi-version: v0.11.1
+          cache: true
+
+      - name: build doc
+        run: pixi run doc
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: "doc/build/html"
